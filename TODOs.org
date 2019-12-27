@@ -1,0 +1,2 @@
+* TODO Remove the check option at startup screen. 
+
