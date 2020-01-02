@@ -30,15 +30,13 @@ final class ___VARIABLE_productName:identifier___Presenter: Presenter {
 
     func handle(event: ___VARIABLE_productName:identifier___ViewEvent) {
         switch event {
-        default:
-            print("Handle events coming from view.")
+
         }
     }
 
     func handle(response: ___VARIABLE_productName:identifier___InteractorResponse) {
         switch response {
-        default:
-            print("Handle responses coming from interactor.")
+
         }
     }
 }

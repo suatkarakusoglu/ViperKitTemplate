@@ -23,8 +23,7 @@ final class ___VARIABLE_productName:identifier___Interactor: Interactor {
 
     func handle(request: ___VARIABLE_productName:identifier___InteractorRequest) {
         switch request {
-        default:
-            print("Handle the request from presenter.")
+
         }
     }
 }

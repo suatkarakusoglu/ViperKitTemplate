@@ -9,7 +9,9 @@ final class ___VARIABLE_productName:identifier___ViewController: UIViewControlle
     var eventListener: AnyEventListener<___VARIABLE_productName:identifier___ViewEvent>?
     
     func handle(command: ___VARIABLE_productName:identifier___PresenterCommand) {
+        switch command {
 
+        }
     }
 
     convenience init() {
