@@ -10,7 +10,8 @@ final class ___VARIABLE_productName:identifier___ViewController: UIViewControlle
     
     func handle(command: ___VARIABLE_productName:identifier___PresenterCommand) {
         switch command {
-
+        @unknown default:
+            print("PresenterCommand should be handled at \(#function)")
         }
     }
 

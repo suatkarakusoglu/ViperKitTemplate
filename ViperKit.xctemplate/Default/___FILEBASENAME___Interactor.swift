@@ -23,7 +23,8 @@ final class ___VARIABLE_productName:identifier___Interactor: Interactor {
 
     func handle(request: ___VARIABLE_productName:identifier___InteractorRequest) {
         switch request {
-
+        @unknown default:
+            print("InteractorRequest should be handled at \(#function)")
         }
     }
 }
