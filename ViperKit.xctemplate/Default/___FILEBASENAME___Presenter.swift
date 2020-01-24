@@ -24,9 +24,7 @@ final class ___VARIABLE_productName:identifier___Presenter: Presenter {
 
     var commandListener: AnyCommandListener<___VARIABLE_productName:identifier___PresenterCommand>?
 
-    var router: Router?
-
-    var arenaPresenter: ArenaPresenter?
+    var router: ___VARIABLE_productName:identifier___Router?
 
     func handle(event: ___VARIABLE_productName:identifier___ViewEvent) {
         switch event {

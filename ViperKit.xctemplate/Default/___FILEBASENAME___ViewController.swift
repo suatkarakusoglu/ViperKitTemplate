@@ -22,7 +22,15 @@ final class ___VARIABLE_productName:identifier___ViewController: UIViewControlle
 
 extension ___VARIABLE_productName:identifier___ViewController: ArenaPresenter {
     func present(viewController: UIViewController) {
-        // navigationController?.pushViewController(viewController, animated: true)
-        print("Present view controller.")
+        self.present(viewController, animated: true)
+    }
+
+    func push(viewController: UIViewController) {
+        guard let nagivationController = self.navigationController else {
+            print("No navigation controller to push in !")
+            return
+        }
+
+        nagivationController.pushViewController(viewController, animated: true)
     }
 }

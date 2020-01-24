@@ -21,8 +21,9 @@ extension ArenaType
         self.build(
           view: viewController,
           presenter: presenter,
-          interactor: interactor,
-          arenaPresenter: viewController)
+          interactor: interactor)
+
+        presenter.router = ___VARIABLE_productName:identifier___Router(arenaPresenter: viewController)
 
         return viewController
     }
