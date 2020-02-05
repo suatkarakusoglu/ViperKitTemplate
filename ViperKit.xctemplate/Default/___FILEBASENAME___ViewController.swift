@@ -33,4 +33,12 @@ extension ___VARIABLE_productName:identifier___ViewController: ArenaPresenter {
 
         nagivationController.pushViewController(viewController, animated: true)
     }
+    
+    func dismiss(_ completion: (() -> Void)?) {
+        self.dismiss(animated: true, completion: completion)
+    }
+    
+    func pop() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
