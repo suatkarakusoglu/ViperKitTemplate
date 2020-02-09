@@ -7,7 +7,12 @@ final class ___VARIABLE_productName:identifier___ViewController: UIViewControlle
     typealias Command = ___VARIABLE_productName:identifier___PresenterCommand
 
     var eventListener: AnyEventListener<___VARIABLE_productName:identifier___ViewEvent>?
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+
     func handle(command: ___VARIABLE_productName:identifier___PresenterCommand) {
         switch command {
         @unknown default:
@@ -17,28 +22,5 @@ final class ___VARIABLE_productName:identifier___ViewController: UIViewControlle
 
     convenience init() {
         self.init(nibName: "\(___VARIABLE_productName:identifier___ViewController.self)", bundle: nil)
-    }
-}
-
-extension ___VARIABLE_productName:identifier___ViewController: ArenaPresenter {
-    func present(viewController: UIViewController) {
-        self.present(viewController, animated: true)
-    }
-
-    func push(viewController: UIViewController) {
-        guard let nagivationController = self.navigationController else {
-            print("No navigation controller to push in !")
-            return
-        }
-
-        nagivationController.pushViewController(viewController, animated: true)
-    }
-    
-    func dismiss(_ completion: (() -> Void)?) {
-        self.dismiss(animated: true, completion: completion)
-    }
-    
-    func pop() {
-        self.navigationController?.popViewController(animated: true)
     }
 }
