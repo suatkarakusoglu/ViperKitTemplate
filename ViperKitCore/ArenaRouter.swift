@@ -1,16 +1,6 @@
-//
-//  Router.swift
-//
-//  Created by Suat Karakusoglu (Dogus Teknoloji) on 23.12.2019.
-//  Copyright © 2019 Suat Karakusoglu (Dogus Teknoloji). All rights reserved.
-//
-
 import UIKit.UIApplication
 
-protocol ArenaPresenter: class {
-    func present(viewController: UIViewController)
-    func push(viewController: UIViewController)
-}
+typealias ArenaPresenter = UIViewController
 
 protocol Route { }
 
@@ -28,25 +18,32 @@ extension Router {
             return
         }
         
-        let viewController = arena.viewController
-        windowToLaunchOn.rootViewController = viewController
-        windowToLaunchOn.makeKeyAndVisible()
-        
-        let options: UIView.AnimationOptions = .transitionCrossDissolve
-        let duration: TimeInterval = 0.25
-
-        UIView.transition(with: windowToLaunchOn, duration: duration, options: options, animations: {}, completion:
-        { completed in
-        })
+        arena.launch(window: windowToLaunchOn)
     }
     
     func present(arena: Arena) {
         guard let viewController = arena.viewController else { return }
-        arenaPresenter.present(viewController: viewController)
+//        viewController.modalPresentationStyle = .fullScreen
+        self.arenaPresenter.present(viewController, animated: true, completion: nil)
     }
+    
+    func presentInsideNavigationController(arena: Arena) {
+        guard let viewController = arena.viewController else { return }
+        let navigationController = UINavigationController(rootViewController: viewController)
+//        navigationController.modalPresentationStyle = .fullScreen
+        self.arenaPresenter.present(navigationController, animated: true, completion: nil)
+    }
+
+//    func pushInsideNavigationController(arena: Arena) {
+//        guard let viewController = arena.viewController else { return }
+//        let navigationController = UINavigationController(rootViewController: viewController)
+//        self.arenaPresenter.navigationController?.pushViewController(navigationController, animated: true)
+//        //        navigationController.modalPresentationStyle = .fullScreen
+////        self.arenaPresenter.present(navigationController, animated: true, completion: nil)
+//    }
     
     func push(arena: Arena) {
         guard let viewController = arena.viewController else { return }
-        arenaPresenter.push(viewController: viewController)
+        self.arenaPresenter.navigationController?.pushViewController(viewController, animated: true)
     }
 }

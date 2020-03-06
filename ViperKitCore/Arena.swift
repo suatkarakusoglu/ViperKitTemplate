@@ -21,3 +21,34 @@ extension Arena {
         interactor.responseListener = AnyResponseListener<P.Response>(handler: presenter.handle)
     }
 }
+
+extension Arena {
+    func launch(window: UIWindow? = nil) {
+        guard let windowToLaunchOn = window ?? UIApplication.shared.windows.first else {
+            print("Couldn't launch arena")
+            return
+        }
+        
+        let viewController = self.viewController
+        viewController?.launch(window: window)
+    }
+}
+
+extension UIViewController {
+    func launch(window: UIWindow? = nil) {
+        guard let windowToLaunchOn = window ?? UIApplication.shared.windows.first else {
+            print("Couldn't launch arena")
+            return
+        }
+        
+        windowToLaunchOn.rootViewController = self
+        windowToLaunchOn.makeKeyAndVisible()
+        
+        let options: UIView.AnimationOptions = .transitionCrossDissolve
+        let duration: TimeInterval = 0.25
+        
+        UIView.transition(with: windowToLaunchOn, duration: duration, options: options, animations: {}, completion:
+            { completed in
+        })
+    }
+}
