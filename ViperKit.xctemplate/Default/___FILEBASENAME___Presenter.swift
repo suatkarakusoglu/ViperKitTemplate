@@ -22,7 +22,7 @@ final class ___VARIABLE_productName:identifier___Presenter: Presenter {
 
     var requestListener: AnyRequestListener<___VARIABLE_productName:identifier___InteractorRequest>?
 
-    var commandListener: AnyCommandListener<___VARIABLE_productName:identifier___PresenterCommand>?
+    weak var commandListener: ___VARIABLE_productName:identifier___ViewController?
 
     var router: ___VARIABLE_productName:identifier___Router?
 

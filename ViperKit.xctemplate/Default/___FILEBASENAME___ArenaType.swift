@@ -23,6 +23,7 @@ extension ArenaType
           presenter: presenter,
           interactor: interactor)
 
+        presenter.commandListener = viewController
         presenter.router = ___VARIABLE_productName:identifier___Router(arenaPresenter: viewController)
 
         return viewController
